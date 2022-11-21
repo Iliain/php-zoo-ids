@@ -91,7 +91,7 @@ class UsernameRandomizer
      */
     public static function getRandomElement($words = []) 
     {
-        $index = rand(0, count($words));
+        $index = rand(0, count($words) - 1);
         return $words[$index];
     }
     
