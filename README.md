@@ -1,6 +1,6 @@
 # php-zoo-ids
 
-A PHP version of [bryanmylee's zoo-ids](https://github.com/bryanmylee/zoo-ids), originally written in JavaScript, which was in turn inspired by the URL ID's of [gfycat.com](https://gfycat.com).
+A PHP version of [bryanmylee's zoo-ids](https://github.com/bryanmylee/zoo-ids), originally written in JavaScript, which was in turn inspired by the URL ID's of [gfycat.com](https://gfycat.com). For a frontend or backend that uses JavaScript, I highly recommend you use their package!
 
 Generate **predictable** and **unique** identifiers composed of adjectives and animal names, with the ability to seed the random identifiers.
 
@@ -75,4 +75,4 @@ Defaults to `'titlecase'`.
 
 ## Credits
 
-All credit goes to [Bryan Lee](https://github.com/bryanmylee) and his [zoo-ids](https://github.com/bryanmylee/zoo-ids) package. I wanted a version of this to use in PHP, and converted the majority of his existing code to that format.
+All credit goes to [Bryan Lee](https://github.com/bryanmylee) and his [zoo-ids](https://github.com/bryanmylee/zoo-ids) package. I wanted a version of this to use in PHP (username generation was handled by a PHP CMS), and converted the majority of his existing code to that format. Currently lacking some of his original features, such as the ability to use objects as seeds.
