@@ -1,6 +1,6 @@
 <?php 
 
-$nouns = [
+$nounArray = [
 	'aardvark',
 	'albatross',
 	'alligator',
@@ -224,7 +224,7 @@ $nouns = [
 	'zebra',
 ];
 
-$adjectives = [
+$adjectiveArray = [
 	'abandoned',
 	'able',
 	'absolute',
