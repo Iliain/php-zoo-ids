@@ -1,0 +1,24 @@
+{
+    "name": "iliain/php-zoo-ids",
+    "description": "A PHP version of bryanmylee's zoo-ids, originally written in JavaScript",
+    "license": "BSD-3-Clause",
+    "keywords": [
+      "zoo-ids",
+      "usernames",
+      "random"
+    ],
+    "authors": [
+        {
+            "name": "Iliain"
+        }
+    ],
+    "homepage": "http://github.com/Iliain/php-zoo-ids",
+    "require": {
+        "php": "^=7",
+    },
+    "autoload": {
+        "psr-4": {
+            "Iliain\\ZooIDs\\": "src/"
+        }
+    }
+}
