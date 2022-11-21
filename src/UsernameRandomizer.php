@@ -8,6 +8,37 @@ namespace Iliain\ZooIDs;
  */
 class UsernameRandomizer
 {
+    static $adjectiveList;
+
+    static $nounList;
+
+    public function __construct($customAdjectives = null, $customNouns = null) 
+    {
+        include __DIR__ . '/RandomizerArrays.php';
+
+        if ($customAdjectives === null) {
+            self::$adjectiveList = $adjectiveArray;
+        } else {
+            self::$adjectiveList = $customAdjectives;
+        }
+
+        if ($customNouns === null) {
+            self::$nounList = $nounArray;
+        } else {
+            self::$nounList = $customNouns;
+        }
+    }
+
+    public function setAdjectives($customAdjectives) 
+    {
+        self::$adjectiveList = $customAdjectives;
+    }
+
+    public function setNouns($customNouns) 
+    {
+        self::$nounList = $customNouns;
+    }
+
     /**
      * Generates a random username comprised of multiple adjectives and one noun
      * @param $seed             string|int|null     The seed to use for the randomization, defaults to current time
@@ -33,18 +64,16 @@ class UsernameRandomizer
             'delimiter'     => $delimiter,
             'caseStyle'     => $caseStyle,
         ];
-
-        include __DIR__ . '/RandomizerArrays.php';
         
         // Generate Adjectives
         for ($i = 0; $i < $numAdjectives; $i++) {
-            $adjective = self::getRandomElement($adjectives);
+            $adjective = self::getRandomElement(self::$adjectiveList);
             $result .= self::getFormattedWord($adjective, $fullOptions);
             $result .= $delimiter;
         }
         
         // Generate Noun
-        $animal = self::getRandomElement($nouns);
+        $animal = self::getRandomElement(self::$nounList);
         $result .= self::getFormattedWord($animal, $fullOptions);
 
         // If camelcase, lowercase the first letter
