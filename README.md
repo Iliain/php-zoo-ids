@@ -31,6 +31,19 @@ UsernameRandomizer::generateID('short seed'); // KnobbyNauticalKingfisher
 UsernameRandomizer::generateID(null, 2, '🍓', 'lowercase'); // enchanted🍓narrow🍓wallaby
 ```
 
+If you want to control the list of Nouns and Adjectives, you can instead create an object and provide arrays:
+
+```php
+$randomizer = new UsernameRandomizer(['Jumping','Flying','Running','Waving'], ['Rock', 'Paper', 'Scissors']);
+$randomizer->generateID(); // JumpingRunningScissors
+
+$randomizer->setAdjectives(['Diving','Walking','Spinning']);
+$randomizer->generateID(); // WalkingDivingScissors
+
+$randomizer->setNouns(['Koala', 'Dog']);
+$randomizer->generateID(); // WalkingDivingKoala
+```
+
 ### Documentation
 
 #### `generateID($seed, $numAdjectives, $delimiter, $caseStyle)`
