@@ -25,13 +25,14 @@ $ composer require iliain/php-zoo-ids
 ```php
 use Iliain\ZooIDs\UsernameRandomizer;
 
-UsernameRandomizer::generateID('short seed'); // KnobbyNauticalKingfisher
+$randomizer = new UsernameRandomizer();
+$randomizer->generateID('short seed'); // KnobbyNauticalKingfisher
 
 // Defaults to the current time if seed is null.
-UsernameRandomizer::generateID(null, 2, '🍓', 'lowercase'); // enchanted🍓narrow🍓wallaby
+$randomizer->generateID(null, 2, '🍓', 'lowercase'); // enchanted🍓narrow🍓wallaby
 ```
 
-If you want to control the list of Nouns and Adjectives, you can instead create an object and provide arrays:
+If you want to control the list of Nouns and Adjectives, you can provide your own: 
 
 ```php
 $randomizer = new UsernameRandomizer(['Jumping','Flying','Running','Waving'], ['Rock', 'Paper', 'Scissors']);
@@ -45,6 +46,16 @@ $randomizer->generateID(); // WalkingDivingKoala
 ```
 
 ### Documentation
+
+#### `new UsernameRandomizer($adjectives, $nouns)`
+
+##### `adjectives: array`
+
+An array of adjectives to use in generation. Defaults to preprovided list if none are specified.
+
+##### `nouns: array`
+
+An array of nouns to use in generation. Defaults to preprovided list if none are specified.
 
 #### `generateID($seed, $numAdjectives, $delimiter, $caseStyle)`
 
