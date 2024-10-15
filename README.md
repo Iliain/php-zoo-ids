@@ -1,10 +1,10 @@
 # php-zoo-ids
 
-[![Latest Stable Version](http://poser.pugx.org/iliain/php-zoo-ids/v)](https://packagist.org/packages/iliain/php-zoo-ids) 
-[![Total Downloads](http://poser.pugx.org/iliain/php-zoo-ids/downloads)](https://packagist.org/packages/iliain/php-zoo-ids) 
-[![Latest Unstable Version](http://poser.pugx.org/iliain/php-zoo-ids/v/unstable)](https://packagist.org/packages/iliain/php-zoo-ids) 
-[![License](http://poser.pugx.org/iliain/php-zoo-ids/license)](https://packagist.org/packages/iliain/php-zoo-ids) 
-[![PHP Version Require](http://poser.pugx.org/iliain/php-zoo-ids/require/php)](https://packagist.org/packages/iliain/php-zoo-ids)
+[![Latest Stable Version](https://poser.pugx.org/iliain/php-zoo-ids/v)](https://packagist.org/packages/iliain/php-zoo-ids) 
+[![Total Downloads](https://poser.pugx.org/iliain/php-zoo-ids/downloads)](https://packagist.org/packages/iliain/php-zoo-ids) 
+[![Latest Unstable Version](https://poser.pugx.org/iliain/php-zoo-ids/v/unstable)](https://packagist.org/packages/iliain/php-zoo-ids) 
+[![License](https://poser.pugx.org/iliain/php-zoo-ids/license)](https://packagist.org/packages/iliain/php-zoo-ids) 
+[![PHP Version Require](https://poser.pugx.org/iliain/php-zoo-ids/require/php)](https://packagist.org/packages/iliain/php-zoo-ids)
 
 A PHP version of [bryanmylee's zoo-ids](https://github.com/bryanmylee/zoo-ids), originally written in JavaScript, which was in turn inspired by the URL ID's of [gfycat.com](https://gfycat.com). For a frontend or backend that uses JavaScript, I highly recommend you use their package!
 
