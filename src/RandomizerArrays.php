@@ -1,5 +1,8 @@
 <?php 
 
+/**
+ * @var array $nounArray
+ */
 $nounArray = [
 	'aardvark',
 	'albatross',
@@ -224,6 +227,9 @@ $nounArray = [
 	'zebra',
 ];
 
+/*
+ * @var array $adjectiveArray
+ */
 $adjectiveArray = [
 	'abandoned',
 	'able',

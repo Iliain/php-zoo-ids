@@ -4,14 +4,26 @@ namespace Iliain\ZooIDs;
 
 /**
  * Class UsernameRandomizer
+ * Generates a random username comprised of multiple adjectives and one noun. Can be customized with custom word lists.
  * @package Iliain\ZooIDs
  */
 class UsernameRandomizer
 {
+    /**
+     * @var array
+     */
     static $adjectiveList;
 
+    /**
+     * @var array
+     */
     static $nounList;
 
+    /**
+     * UsernameRandomizer constructor.
+     * @param null|array $customAdjectives
+     * @param null|array $customNouns
+     */
     public function __construct($customAdjectives = null, $customNouns = null) 
     {
         include __DIR__ . '/RandomizerArrays.php';
@@ -29,25 +41,31 @@ class UsernameRandomizer
         }
     }
 
-    public function setAdjectives($customAdjectives) 
+    /**
+     * @param array $customAdjectives
+     */
+    public function setAdjectives($customAdjectives): void 
     {
         self::$adjectiveList = $customAdjectives;
     }
 
-    public function setNouns($customNouns) 
+    /**
+     * @param array $customNouns
+     */
+    public function setNouns($customNouns): void 
     {
         self::$nounList = $customNouns;
     }
 
     /**
      * Generates a random username comprised of multiple adjectives and one noun
-     * @param $seed             string|int|null     The seed to use for the randomization, defaults to current time
-     * @param $numAdjectives    int                 The number of adjectives to use in the username
-     * @param $delimiter        string              The delimiter to use between the adjectives and the noun
-     * @param $caseStyle        string              The case style to use for the username
+     * @param string|int|null $seed                 The seed to use for the randomization, defaults to current time
+     * @param int $numAdjectives                    The number of adjectives to use in the username
+     * @param string $delimiter                     The delimiter to use between the adjectives and the noun
+     * @param string $caseStyle                     The case style to use for the username
      * @return string
      */
-    public static function generateID($seed = null, $numAdjectives = 2, $delimiter = '', $caseStyle = 'titlecase')
+    public static function generateID($seed = null, $numAdjectives = 2, $delimiter = '', $caseStyle = 'titlecase'): string
     {
         if (!$seed) {
             $seed = (string)strtotime('now');
@@ -86,10 +104,10 @@ class UsernameRandomizer
 
     /**
      * Generates a random number between 0 and the length of the provided array, then selects the word at that index
-     * @param $word  string The word to format
-     * @param $words array  The array of words to select from
+     * @param string $word   The word to format
+     * @param array $words   The array of words to select from
      */
-    public static function getRandomElement($words = []) 
+    public static function getRandomElement($words = []): string 
     {
         $index = rand(0, count($words) - 1);
         return $words[$index];
@@ -97,10 +115,10 @@ class UsernameRandomizer
     
     /**
      * Formats the provided word according to the provided options
-     * @param $word string
-     * @param $options array
+     * @param string $word 
+     * @param array $options
      */
-    public static function getFormattedWord($word, $options) 
+    public static function getFormattedWord($word, $options): string 
     {
         if (strpos($word, '-') !== false) {
             $wordArray = explode('-', $word);
@@ -110,6 +128,7 @@ class UsernameRandomizer
 
             return implode('-', $wordArray);
         }
+
         switch ($options['caseStyle']) {
             case 'titlecase':
             case 'camelcase':
@@ -125,9 +144,10 @@ class UsernameRandomizer
     }
     
     /**
+     * Toggles the case of each letter in the provided word. E.g. "hello" becomes "HeLlO"
      * @param $word string
      */
-    public static function getToggleCaseWord($word) 
+    public static function getToggleCaseWord($word): string 
     {
         $wordArray = str_split($word);
         $wordArray = array_map(function($letter, $index) {
