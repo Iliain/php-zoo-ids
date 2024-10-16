@@ -26,19 +26,11 @@ class UsernameRandomizer
      */
     public function __construct($customAdjectives = null, $customNouns = null) 
     {
+        // $adjectiveArray and $nounArray are defined in RandomizerArrays.php
         include __DIR__ . '/RandomizerArrays.php';
 
-        if ($customAdjectives === null) {
-            self::$adjectiveList = $adjectiveArray;
-        } else {
-            self::$adjectiveList = $customAdjectives;
-        }
-
-        if ($customNouns === null) {
-            self::$nounList = $nounArray;
-        } else {
-            self::$nounList = $customNouns;
-        }
+        self::$adjectiveList = $customAdjectives ?? $adjectiveArray;
+        self::$nounList = $customNouns ?? $nounArray;
     }
 
     /**
@@ -145,7 +137,7 @@ class UsernameRandomizer
     
     /**
      * Toggles the case of each letter in the provided word. E.g. "hello" becomes "HeLlO"
-     * @param $word string
+     * @param string $word
      */
     public static function getToggleCaseWord($word): string 
     {
